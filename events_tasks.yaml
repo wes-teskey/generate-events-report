@@ -13,7 +13,7 @@ events_research_task:
     Make sure to include all events within the specified dates at the
     specified venue.
     
-    Also, include at least three website references for 
+    Also, include at least two website references for 
     each of the following three pieces of information:
     A. event's name
     B. dates
@@ -35,18 +35,18 @@ events_verification_task:
     
     {dates_to_check}
     
-    Cross-check each piece of information A, B and C with three websites 
+    Cross-check each piece of information A, B and C with two websites 
     to ensure reliability. 
     For an event to be considered verified, it must have information for 
     each of the below points (A-C) and each piece of this information must be
-    verified from three websites. Here is the format to use:
+    verified from two websites. Here is the format to use:
 
-    A. event's name (include the three websites used to verify event's name)
-    B. dates (include the three websites used to verify event's dates)
-    C. location (include the three websites used to verify event's location)
+    A. event's name (include the two websites used to verify event's name)
+    B. dates (include the two websites used to verify event's dates)
+    C. location (include the two websites used to verify event's location)
 
     If an event is not fully verified (meaning that all points A, B and C are not
-    each verified from three websites), do not include it in the summary.
+    each verified from two websites), do not include it in the summary.
 
     If no events are found for the venue, write "No events found for this venue."
   expected_output: >
@@ -89,7 +89,7 @@ events_summary_task:
     {dates_to_check}
     
     Only include events that have been
-    verified from two websites, from the information provided by the
+    verified from at least two websites, from the information provided by the
     Senior Event Research Analyst. Do not include any events that have not been
     fully verified from the Senior Event Research Analyst.
 

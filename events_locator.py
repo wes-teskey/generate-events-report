@@ -6,7 +6,6 @@ from crewai.project import CrewBase, agent, crew, task
 from dotenv import load_dotenv
 from langchain.chat_models import ChatOpenAI
 from events_venues import venues_lv
-from langchain_groq import ChatGroq
 from langchain.utilities.tavily_search import TavilySearchAPIWrapper
 from langchain.tools.tavily_search import TavilySearchResults
 import datetime
@@ -79,7 +78,6 @@ class EventsLocatorCrew():
                      self.events_details_research_task(), self.events_summary_task()],
             process = Process.sequential,
             verbose = 2,
-            max_rpm=2, #prevent rate limiting from llama3-70b-8192
             )
     
 def path_to_save_file(sub_directory: str, file_name: str, include_time: bool = True):
@@ -140,23 +138,19 @@ def merge_files(venue_loc, dates_to_check, llm_name, venues):
 def main():
     print("\n\n## Welcome to the Events Finder ##")
     print('-------------------------------')
-    llm_name = input(
-        dedent("""
-               Which model do you want to use (gpt-4o or llama3-70b-8192)?
-               """))
+
     dates_to_check = input(
         dedent("""
                What specific dates do you want to check?
                """))
     
+    #llm defaults to gpt-4o
+    llm_name = "gpt-4o"
+    llm = ChatOpenAI(model="gpt-4o", temperature=0)
+
     #Default to Las Vegas Venues
     venue_loc = 'lv' 
     venues = venues_lv
-    
-    if llm_name[:3] == 'gpt':
-        llm = ChatOpenAI(model="gpt-4o", temperature=0)
-    else:
-        llm = ChatGroq(model="llama3-70b-8192", temperature=0) #Default to Llama3-70b-8192
 
     for i, venue in enumerate(venues):
         output_file_name = path_to_save_file(sub_directory='data',
