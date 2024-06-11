@@ -1,0 +1,113 @@
+events_research_task:
+  description: >
+    Research and summarize the background of all events at: 
+    
+    {venue} 
+    
+    for the following dates:
+    
+    {dates_to_check}
+    
+    Be very thorough and detailed.
+
+    Make sure to include all events within the specified dates at the
+    specified venue.
+    
+    Also, include at least three website references for 
+    each of the following three pieces of information:
+    A. event's name
+    B. dates
+    C. location
+    
+    If there are no relevant events for a particular date, 
+    write "No events found for this venue."
+  expected_output: >
+    A report about of all events at {venue} for the following
+    dates: {dates_to_check}
+
+events_verification_task:
+  description: >
+    Verify the accuracy of the information for all events at: 
+    
+    {venue} 
+    
+    for the following dates:
+    
+    {dates_to_check}
+    
+    Cross-check each piece of information A, B and C with three websites 
+    to ensure reliability. 
+    For an event to be considered verified, it must have information for 
+    each of the below points (A-C) and each piece of this information must be
+    verified from three websites. Here is the format to use:
+
+    A. event's name (include the three websites used to verify event's name)
+    B. dates (include the three websites used to verify event's dates)
+    C. location (include the three websites used to verify event's location)
+
+    If an event is not fully verified (meaning that all points A, B and C are not
+    each verified from three websites), do not include it in the summary.
+
+    If no events are found for the venue, write "No events found for this venue."
+  expected_output: >
+    A verified and accurate summary of all events at {venue} for the following
+    dates: {dates_to_check}
+
+events_details_research_task:
+  description: >
+    For verified events at: 
+    
+    {venue} 
+    
+    for the following dates:
+    
+    {dates_to_check}
+    
+    Add the following informaion:
+    D. a brief description for the event 
+    E. how many attendees are expected 
+    F. the event fees for attendees 
+    G. website references for information in items A, B and C
+
+    You should already have verified the information in items A, B and C.
+    If there is no verified information for A, B and C given to you, do not include the event.
+    
+    If there are no relevant events for a particular date, 
+    write "No events found for this venue."
+  expected_output: >
+    A very detailed report about of all events at {venue} for the following
+    dates: {dates_to_check}
+
+events_summary_task:
+  description: >
+    Write a detailed summary of all verified events at:
+    
+    {venue} 
+    
+    for the following dates:
+    
+    {dates_to_check}
+    
+    Only include events that have been
+    verified from two websites, from the information provided by the
+    Senior Event Research Analyst. Do not include any events that have not been
+    fully verified from the Senior Event Research Analyst.
+
+    For each event, number them as 1, 2, 3, etc. and include the following:
+
+    A. event's name 
+    B. dates
+    C. location
+    D. a brief description for the event 
+    E. how many attendees are expected 
+    F. the event fees for attendees 
+    G. website references for all information in items A, B and C
+
+    If no events are found for the venue, write ONLY "No events found for this venue."
+    In this case (of no event), do not write sections A, B, C, D, E, F and G
+
+  expected_output: >
+    Write a detailed summary of all verified events at {venue}
+    for the following dates:
+    {dates_to_check}
+    Only include events that have been verified by the Senior Event Research Analyst. 
