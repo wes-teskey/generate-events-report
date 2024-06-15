@@ -57,7 +57,7 @@ OPENAI_API_KEY: The API key for accessing OpenAI services.
 
 TAVILY_API_KEY: The API key for accessing Tavily services.
 
-Caution: Using the OPENAI_API_KEY can incur significant costs, potentially amounting to many tens of dollars per hour depending on usage. Please be mindful of your usage to avoid unexpected charges.
+Caution: Using the OPENAI_API_KEY can be really expensive. Please be mindful of your usage to avoid unexpected costs.
 
 ### Creating the `data/` Directory
 
