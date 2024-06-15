@@ -46,6 +46,15 @@ After the installation is complete, verify the installation
 - **`data/`**: Contains all data-related files.
 - **`src/`**: Contains the source code of the project.
 - **`venv/`**: Contains the virtual environment for the project.
+- **`.env`**: Contains environment variables, including API keys.
+
+### Environment Variables
+The .env file in the root directory contains the following environment variables:
+
+OPENAI_API_KEY: The API key for accessing OpenAI services.
+TAVILY_API_KEY: The API key for accessing Tavily services.
+
+Caution: Using the OPENAI_API_KEY can incur significant costs, potentially amounting to many tens of dollars per hour depending on usage. Please be mindful of your usage to avoid unexpected charges.
 
 ### Creating the `data/` Directory
 
