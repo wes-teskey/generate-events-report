@@ -17,7 +17,9 @@ python -m venv venv
 venv\Scripts\activate
 
 3. **Install the required packages (shown for windows):**
+
 pip install crewai
+
 pip install "crewai[tools]"
 
 ## Windows Users: Resolving Microsoft Visual C++ 14.0 Build Tools Error
@@ -52,6 +54,7 @@ After the installation is complete, verify the installation
 The .env file in the root directory contains the following environment variables:
 
 OPENAI_API_KEY: The API key for accessing OpenAI services.
+
 TAVILY_API_KEY: The API key for accessing Tavily services.
 
 Caution: Using the OPENAI_API_KEY can incur significant costs, potentially amounting to many tens of dollars per hour depending on usage. Please be mindful of your usage to avoid unexpected charges.
